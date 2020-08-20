@@ -1,6 +1,16 @@
 #Object
 
 
+from matplotlib.ticker import AutoMinorLocator,FormatStrFormatter
+import matplotlib.pyplot as plt
+from matplotlib import style
+from matplotlib.widgets import Cursor,Button
+
+
+style.use('ggplot')
+
+%matplotlib inline
+
 
 class GrainViz():
 
