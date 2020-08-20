@@ -1,5 +1,9 @@
 README.md
 setup.py
+Sedipack/GrainDataTables.py
+Sedipack/GrainPlots.py
+Sedipack/GrainStats.py
+Sedipack/RawGrains.py
 Sedipack/__init__.py
 Sedipack.egg-info/PKG-INFO
 Sedipack.egg-info/SOURCES.txt
