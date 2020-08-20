@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: Sedipack
-Version: 0.0.3
+Version: 0.0.4
 Summary: A Sedimentology package for Grain Statistics and Plots.
-Home-page: https://github.com/pypa/sampleproject
+Home-page: https://github.com/philip-kio/SediPack
 Author: Philip Ireoluwa Okiokio
 Author-email: philipokiokio@gmail.com
 License: UNKNOWN
@@ -33,9 +33,9 @@ Description: # Sedipack
         1. GrainPreprocess: has four calls that can be made. which are 
         * MM_to_Phi()
         
-        *Bed_To_100()
+        * Bed_To_100()
         
-        *CummulateBed()
+        * CummulateBed()
         
         *Precentiles()
         
@@ -52,11 +52,11 @@ Description: # Sedipack
         
         * GraphicMean()
         
-        *GraphicStandard_Dev()
+        * GraphicStandard_Dev()
         
-        *GraphicSkewness()
+        * GraphicSkewness()
         
-        *GraphicKurtosis()
+        * GraphicKurtosis()
         
         
         4. GrainDataTables: houses several call which are 
