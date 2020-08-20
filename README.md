@@ -44,11 +44,11 @@ The Package comprises of 4 Houses  of serveral functions.
 
 * GraphicMean()
 
-*GraphicStandard_Dev()
+* GraphicStandard_Dev()
 
-*GraphicSkewness()
+* GraphicSkewness()
 
-*GraphicKurtosis()
+* GraphicKurtosis()
 
 
 4. GrainDataTables: houses several call which are 
