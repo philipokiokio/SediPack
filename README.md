@@ -25,9 +25,9 @@ The Package comprises of 4 Houses  of serveral functions.
 1. GrainPreprocess: has four calls that can be made. which are 
 * MM_to_Phi()
 
-*Bed_To_100()
+* Bed_To_100()
 
-*CummulateBed()
+* CummulateBed()
 
 *Precentiles()
 
