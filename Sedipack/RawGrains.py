@@ -1,6 +1,8 @@
 #The Object 
 import math 
 
+import pandas as pd 
+import numpy as np
 
 class GrainPreprocess():
     def __init__(self):
