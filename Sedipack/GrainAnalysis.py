@@ -22,19 +22,41 @@ style.use('ggplot')
 
 
 class GrainPreprocess():
+
+    '''
+    Class to preprocess grains for sedimentological analysis
+    Beds and grain conversions
+    '''
+
     def __init__(self):
         pass
     
     def MM_to_Phi(d):
-#         self.d = d
-        phi=[round(-(math.log2(i)/math.log2(2)),2) for i in d]
+
+        """
+        Method to convert an array/list of grain seive sizes in mm to phi scale
         
-        """this function converts an array/list of grain seive sizes in mm to phi scale 
-        and returns the phi reading for sedimentological analysis"""
+        args:: 
+            d: array of grain sieve sizes
+        
+        Returns the phi reading for sedimentological analysis
+        """
+
+        #self.d = d
+        phi=[round(-(math.log2(i)/math.log2(2)),2) for i in d]
+
         return phi
     
     def Bed_To_100(x):
-        """This is used to scale beds that are less than 100 in total weight to 100"""
+
+        """
+        Method to scaleup beds and truncate beds greater than 100 to 100
+        args::
+            x: Bed
+        Returns:
+            Scaled Bed
+        
+        """
         total=sum(x)
         bed =[round(((i/total) *100),2) for i in x]
     
@@ -44,7 +66,11 @@ class GrainPreprocess():
     
     
     def CummulateBed(bed):
-        """this function returns the cummulative score of an array (0-100)"""
+
+        """
+        Method to return the cummulative score of an array (0-100)
+        """
+
         from itertools import accumulate
    
     
@@ -58,10 +84,14 @@ class GrainPreprocess():
 
 
     def Percentiles(bed_data):
-        """This get the percentile for the data passed. 
-        it returns  a dataframe of the percentage passing,percentile of the data
+
+        """
+        This get the percentile for the data passed. 
+        
+        Returns  a dataframe of the percentage passing,percentile of the data
         and the bed_data.
         """
+
         sedi_passing=[5,16,25,50,75,84,95,100]
    
         bed=bed_data
@@ -80,15 +110,25 @@ class GrainViz():
 
     
     def InfoHelp():
+
+        '''
+        Class Help
+        '''
+
        print( '''Generate a DataFrame(Spread Sheet of the data),
         Initial plot of the Cumulative Mass Retain Vs Phi_scale,
         to pick the percentiles of interest on the Phi scale.''')
     
     def DataFrame(q,phi,bed_data):
+
         """
-        Passing the dictionary, from the percentile function, 
-        the phi scale list/array.
-        the bed_data.
+        Argss::
+            Passing the dictionary, from the percentile function, 
+            the phi scale list/array.
+            the bed_data.
+
+        Returns:
+            DataFrame object
         """
     
     
@@ -106,6 +146,7 @@ class GrainViz():
     
 
     def DataFrame_PhiPercentiles(data,phi_percentile):
+
         data['Percentile_Grain_size_(Phi)']=phi_percentile
         return data
     
@@ -114,6 +155,13 @@ class GrainViz():
 
 
     def DataPlot(data,name_of_bed,fig=False,save_data=False):
+
+        '''
+        Method to plot data
+        args::
+            data: Data to be plotted
+            name_of_bed: Bed to be plotted
+        '''
         
         if fig == True or save_data == False:
             """Plots the Cuumulative Mass Retained vs the Phi Scale for easy picking of the percentiles"""
@@ -247,8 +295,10 @@ class GrainStatsDes():
     
     def GraphicStandard_Dev(data):
     
-        '''A function to calculate the graphic standard deviation for the Data 
-        using the 95th, 5th, 84th,16th percentiles'''
+        '''
+        Method to calculate the graphic standard deviation for the Data 
+        using the 95th, 5th, 84th,16th percentiles
+        '''
 
     #     percentiles_right = [95,5]
     #     percentiles_left = [84,16]
@@ -272,7 +322,11 @@ class GrainStatsDes():
     
     
     def GraphicSkewness(data):
-        '''Function of the graphic_skewness using the 5th, 16th, 50th, 84th,95th percentiles'''
+
+        '''
+        Method for the the graphic_skewness using the 5th, 16th, 50th, 84th,95th percentiles
+        '''
+
         #percentiles = [5,16,50,84,95]
     
         phi_percentile=list(data['Percentile_Grain_size_(Phi)'])
@@ -293,8 +347,9 @@ class GrainStatsDes():
     
     
     def GraphicKurtosis(data):
+
         '''
-        This is a function for Graphic Kurtosis, using the 5th, 25th,75th and the 95th percentile
+        Method for the Graphic Kurtosis, using the 5th, 25th,75th and the 95th percentile
         '''
     
     #     percentile = [5,25,75,95]
@@ -318,6 +373,7 @@ class GrainDataTables():
     
     
     def help():
+
         print('''Input the very First Bed Data into the BedData function,
         Then when passing the rest of the bed data
         you include the first data initiated and the data points for other beds. ''')
@@ -360,7 +416,11 @@ class GrainDataTables():
         return bed_stat
     
     def SaveBeds(data,name_of_rock_unit):
-        '''Saves Bed Grains stats from the CompleteBeds and creates a CSV file in your Present working Directory.'''
+
+        '''
+        Saves Bed Grains stats from the CompleteBeds and creates a CSV file in your Present working Directory.
+        '''
+        
         data=data
         name= name_of_rock_unit
     
