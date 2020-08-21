@@ -4,7 +4,7 @@ This is a simple package that is created to provide support to earth scientist a
 
 This package seeks to help create an open-source solution to grain-size statistical analysis, and the production of grain plots.
 
-Sedi pack is born out of the problems faced during the earlier days of the my final year thesis. 
+Sedi pack is born out of the problems faced during the earlier days of the my Senior year project. 
 
 The Problem I faced was: Software and Activation Keys which is or was expensive to get.
 
@@ -20,7 +20,9 @@ The Package comprises of 4 Houses  of serveral functions.
 3. *GrainStasDes.*
 4. *GrainDataTables.*
 
+### Functions and Methods Available.
 
+There are about 14 functions/method that vcan be called and returns various data points.
 
 1. GrainPreprocess: has four calls that can be made. which are 
 * MM_to_Phi()
@@ -29,9 +31,9 @@ The Package comprises of 4 Houses  of serveral functions.
 
 * CummulateBed()
 
-*Precentiles()
+* Percentiles()
 
-2.GrainViz: houses serveral calls which are
+2. GrainViz: houses serveral calls which are
 
 * DataFrame()
 
@@ -77,3 +79,5 @@ I will like to also acknowledge the input of mentors and friends in this project
 
 
 Thank you all.
+
+Philip Ireoluwa Okiokio

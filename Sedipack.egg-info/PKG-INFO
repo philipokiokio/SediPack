@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: Sedipack
-Version: 0.0.4
+Version: 0.0.6.2
 Summary: A Sedimentology package for Grain Statistics and Plots.
 Home-page: https://github.com/philip-kio/SediPack
 Author: Philip Ireoluwa Okiokio
@@ -12,7 +12,7 @@ Description: # Sedipack
         
         This package seeks to help create an open-source solution to grain-size statistical analysis, and the production of grain plots.
         
-        Sedi pack is born out of the problems faced during the earlier days of the my final year thesis. 
+        Sedi pack is born out of the problems faced during the earlier days of the my Senior year project. 
         
         The Problem I faced was: Software and Activation Keys which is or was expensive to get.
         
@@ -28,7 +28,9 @@ Description: # Sedipack
         3. *GrainStasDes.*
         4. *GrainDataTables.*
         
+        ### Functions and Methods Available.
         
+        There are about 14 functions/method that vcan be called and returns various data points.
         
         1. GrainPreprocess: has four calls that can be made. which are 
         * MM_to_Phi()
@@ -37,9 +39,9 @@ Description: # Sedipack
         
         * CummulateBed()
         
-        *Precentiles()
+        * Percentiles()
         
-        2.GrainViz: houses serveral calls which are
+        2. GrainViz: houses serveral calls which are
         
         * DataFrame()
         
@@ -85,6 +87,8 @@ Description: # Sedipack
         
         
         Thank you all.
+        
+        Philip Ireoluwa Okiokio
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License

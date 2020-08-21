@@ -1,4 +1,11 @@
-#Object
+
+
+#The Object 
+import math 
+
+import pandas as pd 
+import numpy as np
+
 
 
 from matplotlib.ticker import AutoMinorLocator,FormatStrFormatter
@@ -7,32 +14,40 @@ from matplotlib import style
 from matplotlib.widgets import Cursor,Button
 
 
-style.use('ggplot')
-
-%matplotlib inline
-
 
 class GrainViz():
-
+    def __init__(self,f=None):
+        self.f=f        
     
     def InfoHelp():
-       print( '''Generate a DataFrame(Spread Sheet of the data),
-        Initial plot of the Cumulative Mass Retain Vs Phi_scale,
+
+        '''
+        Class Help
+        '''
+        print( '''Generate a DataFrame(Spread Sheet of the data)\n,
+        Initial plot of the Cumulative Mass Retain Vs Phi_scale\n,
         to pick the percentiles of interest on the Phi scale.''')
     
-    def DataFrame(q,phi,bed_data):
-        """
-        Passing the dictionary, from the percentile function, 
-        the phi scale list/array.
-        the bed_data.
-        """
-    
-    
+    def DataFrame(self,q,phi,bed_data):
 
-        Outcrop_Bed_data= dict(zip(phi,bed_data))
+        """
+        Argss::
+            Passing the dictionary, from the percentile function, 
+            the phi scale list/array.
+            the bed_data.
+
+        Returns:
+            DataFrame object
+        """
+    
+        self.q=q
+        self.phi = phi
+        self.bed_data = bed_data
+
+        Outcrop_Bed_data= dict(zip(self.phi,self.bed_data))
         Outcrop_Bed= pd.DataFrame(Outcrop_Bed_data.items(), columns= ['Phi_scale','Cummulative_Mass_Retained'])
     
-        percentile_table=pd.DataFrame(q.items(),columns=['Percentiles','Percentile_Passings' ])
+        percentile_table=pd.DataFrame(self.q.items(),columns=['Percentiles','Percentile_Passings' ])
         percentile_table.drop(['Percentile_Passings'],1, inplace=True)
     
         Out=percentile_table.join(Outcrop_Bed)
@@ -41,21 +56,48 @@ class GrainViz():
         return Out
     
 
-    def DataFrame_PhiPercentiles(data,phi_percentile):
-        data['Percentile_Grain_size_(Phi)']=phi_percentile
-        return data
-    
-    
+    def DataFrame_PhiPercentiles(self,data,phi_percentile):
+        """
+        Argss:: Data(DataFrame)
+        Phi_percentile (list or array of the precentiles)
 
 
-
-    def DataPlot(data,name_of_bed,fig=False,save_data=False):
+        Returns:
+        DataFrame.
         
-        if fig == True or save_data == False:
+        
+        """
+        self.data =data
+        self.phi_percentile = phi_percentile
+
+        self.data['Percentile_Grain_size_(Phi)']=self.phi_percentile
+        return self.data
+    
+    
+
+
+
+    def DataPlot(self,data,name_of_bed,fig=False,save_data=False):
+
+        '''
+        Method to plot data
+        args::
+            data: Data to be plotted
+            name_of_bed: Bed to be plotted
+            fig =False (To plot a shart without saving the plot) or Yes (to save the plot)
+            save_data = False(This prevent the data from saving as a CSV file to save, pass True)
+        '''
+        self.data = data
+        self.name_of_bed = name_of_bed
+        self.fig = fig
+        self.save_data = save_data
+
+
+        if self.fig == True or self.save_data == False:
             """Plots the Cuumulative Mass Retained vs the Phi Scale for easy picking of the percentiles"""
             fig,ax=plt.subplots(figsize=(10,8))
-            plt.plot(data['Phi_scale'],data['Cummulative_Mass_Retained'])
-            plt.scatter(data['Phi_scale'],data['Cummulative_Mass_Retained'])
+            plt.plot(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'])
+            plt.scatter(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'])
             ax.xaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.yaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.xaxis.set_minor_formatter(FormatStrFormatter("%.1f"))
@@ -72,16 +114,16 @@ class GrainViz():
  
             plt.xlabel('Grain Size (Phi)',fontsize=16)
             plt.ylabel('Cumulative Mass Retained (%)',fontsize=16)
-            plt.title(f'Cummulative Frequncy Curve {name_of_bed}',fontsize=20,fontweight='bold')
-            fig.savefig(f'{name_of_bed}.png',pdi=fig.dpi)
+            plt.title(f'Cummulative Frequncy Curve {self.name_of_bed}',fontsize=20,fontweight='bold')
+            fig.savefig(f'{self.name_of_bed}.png',pdi=fig.dpi)
            
             
         
-        elif fig == False or save_data == True:
+        elif self.fig == False or self.save_data == True:
             """Plots the Cuumulative Mass Retained vs the Phi Scale for easy picking of the percentiles"""
             fig,ax=plt.subplots(figsize=(10,8))
-            plt.plot(data['Phi_scale'],data['Cummulative_Mass_Retained'])
-            plt.scatter(data['Phi_scale'],data['Cummulative_Mass_Retained'])
+            plt.plot(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'])
+            plt.scatter(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'])
             ax.xaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.yaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.xaxis.set_minor_formatter(FormatStrFormatter("%.1f"))
@@ -98,15 +140,15 @@ class GrainViz():
  
             plt.xlabel('Grain Size (Phi)',fontsize=16)
             plt.ylabel('Cumulative Mass Retained (%)',fontsize=16)
-            plt.title(f'Cummulative Frequncy Curve {name_of_bed}',fontsize=20,fontweight='bold')
+            plt.title(f'Cummulative Frequncy Curve {self.name_of_bed}',fontsize=20,fontweight='bold')
             
-            data.to_csv(f'{name_of_bed}.csv', index=False)
+            data.to_csv(f'{self.name_of_bed}.csv', index=False)
         
-        elif fig == True or save_data == True:
+        elif self.fig == True or self.save_data == True:
             """Plots the Cuumulative Mass Retained vs the Phi Scale for easy picking of the percentiles"""
             fig,ax=plt.subplots(figsize=(10,8))
-            plt.plot(data['Phi_scale'],data['Cummulative_Mass_Retained'])
-            plt.scatter(data['Phi_scale'],data['Cummulative_Mass_Retained'])
+            plt.plot(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'])
+            plt.scatter(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'])
             ax.xaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.yaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.xaxis.set_minor_formatter(FormatStrFormatter("%.1f"))
@@ -123,17 +165,17 @@ class GrainViz():
  
             plt.xlabel('Grain Size (Phi)',fontsize=16)
             plt.ylabel('Cumulative Mass Retained (%)',fontsize=16)
-            plt.title(f'Cummulative Frequncy Curve {name_of_bed}',fontsize=20,fontweight='bold')
-            fig.savefig(f'{name_of_bed}.png',pdi=fig.dpi)
-            data.to_csv(f'{name_of_bed}.csv', index=False)
+            plt.title(f'Cummulative Frequncy Curve {self.name_of_bed}',fontsize=20,fontweight='bold')
+            fig.savefig(f'{self.name_of_bed}.png',pdi=fig.dpi)
+            data.to_csv(f'{self.name_of_bed}.csv', index=False)
             
             
         else:
               
             """Plots the Cuumulative Mass Retained vs the Phi Scale for easy picking of the percentiles"""
             fig,ax=plt.subplots(figsize=(10,8))
-            plt.plot(data['Phi_scale'],data['Cummulative_Mass_Retained'])
-            plt.scatter(data['Phi_scale'],data['Cummulative_Mass_Retained'])
+            plt.plot(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'])
+            plt.scatter(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'])
             ax.xaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.yaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.xaxis.set_minor_formatter(FormatStrFormatter("%.1f"))
@@ -150,10 +192,9 @@ class GrainViz():
  
             plt.xlabel('Grain Size (Phi)',fontsize=16)
             plt.ylabel('Cumulative Mass Retained (%)',fontsize=16)
-            plt.title(f'Cummulative Frequncy Curve {name_of_bed}',fontsize=20,fontweight='bold')
+            plt.title(f'Cummulative Frequncy Curve {self.name_of_bed}',fontsize=20,fontweight='bold')
            
    
-    
     
     
     

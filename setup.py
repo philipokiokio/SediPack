@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="Sedipack", # Replace with your own username
-    version="0.0.4",
+    version="0.0.6.2",
     author="Philip Ireoluwa Okiokio",
     author_email="philipokiokio@gmail.com",
     description="A Sedimentology package for Grain Statistics and Plots.",
