@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: sedipack
-Version: 0.0.3
+Version: 0.0.5
 Summary: A Sedimentology package for Grain Statistics and Plots.
 Home-page: https://github.com/philip-kio/SediPack
 Author: Philip Ireoluwa Okiokio
@@ -100,18 +100,19 @@ Description: # Sedipack
         
         * Then importing the functionalities needed,
         
-        ```from sedipack.grainpreprocess import GrainPreprocess
+        ```
+        from sedipack.grainpreprocess import GrainPreprocess
         
         from sedipack.grainviz import GrainViz
         
         from sedipack.grainstats import GrainStatsDes
         
-        `from sedipack.grainstatsdata import GrainDataTables
+        from sedipack.grainstatsdata import GrainDataTables
         
         '''
         
         
-        *The intialiazation of the imports.
+        * The intialiazation of the imports.
         
          
         ```

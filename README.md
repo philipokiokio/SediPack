@@ -99,7 +99,7 @@ from sedipack.grainviz import GrainViz
 
 from sedipack.grainstats import GrainStatsDes
 
-`from sedipack.grainstatsdata import GrainDataTables
+from sedipack.grainstatsdata import GrainDataTables
 
 '''
 
