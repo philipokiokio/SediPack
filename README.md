@@ -121,7 +121,7 @@ stats = GrainDataTables()
 * Calling of the methods.
 
 ```
-Preprocess.MM_ToPhiScale)
+Preprocess.MM_ToPhiScale()
 ```
 
 
