@@ -19,41 +19,40 @@ The Package comprises of 4 Houses  of serveral functions.
 There are about 14 functions/method that vcan be called and returns various data points.
 
 1. GrainPreprocess: has four calls that can be made. which are 
-* MM_to_Phi()
+    * MM_to_Phi(): converts the Sieve sizes from MM to Phi scale.
 
-* Bed_To_100()
+    * Bed_To_100(): Standardize the Bed to 100 if it is less than 100/ more.
 
-* CummulateBed()
+    * CummulateBed(): Get the accumlated score of the bed.
 
-* Percentiles()
+    * Percentiles(): returns a Dictionary that contains the accmulated bed and percentiles.
 
 2. GrainViz: houses serveral calls which are
 
-* DataFrame()
+    * DataFrame(): This produces a table/DataFrame of the available data points.
 
-* DataFrame_PhiPercentiles()
+    * DataFrame_PhiPercentiles(): This is used to add the percentiles that was/has been manually read of the plots in the DataFrame.
 
-
-* DataPlot()
+    * DataPlot(): Plots the DataFrame of the Cummulative Mass retained (%) vs the Grain Size (Phi Scale). This Function gives you the ability to save the plot and also name the plot please check the docstrings. 
 
 3. GrainStatsDes: houses several calls which are 
 
-* GraphicMean()
+    * GraphicMean(): Calculates the Graphic Mean of the beds.
 
-* GraphicStandard_Dev()
+    * GraphicStandard_Dev():Calculates the Graphic Standard deviation of the beds.
 
-* GraphicSkewness()
+    * GraphicSkewness(): Calculates the Graphic Skewness of the beds.
 
-* GraphicKurtosis()
+    * GraphicKurtosis():Calculates the Graphic Kurtosis of the beds.
 
 
 4. GrainDataTables: houses several call which are 
 
-* BedData()
+    * BedData(): Creates the Bed DataFrame/Table for the grain statistics done.
 
-* CompleteBeds()
+    * CompleteBeds(): Completes the Bed DataFrame/Table for the grain statistics done after the first bed data has been created. The first BedData which is created with BedData is then passed as the first argument in CompleteBeds method.
 
-* SaveBeds()
+    * SaveBeds(): this method saves the data above as a `.csv file`. Comma seperated values.
 
 
 
