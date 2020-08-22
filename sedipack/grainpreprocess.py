@@ -15,7 +15,7 @@ class GrainPreprocess():
     def __init__(self,d=None):
         self.d = None
 
-    def MM_ToPhiScale(self,d):
+    def MM_ToPhiScale(self,sieveSize):
 
         """
         Method to convert an array/list of grain seive sizes in mm to phi scale
@@ -26,9 +26,9 @@ class GrainPreprocess():
         Returns the phi reading for sedimentological analysis
         """
 
-        self.d = d
+        self.d = sieveSize
 
-        assert (self.d == list), "d should be a list"
+        assert (self.d, list), "seiveSize should be a list"
         phi=[round(-(math.log2(i)/math.log2(2)),2) for i in self.d]
 
         return phi
@@ -44,8 +44,8 @@ class GrainPreprocess():
         
         """
         self.bed = bed
-        assert isinstance(self.bed == list), "Bed should be a list"
-        total=sum(self.x)
+        assert isinstance(self.bed,list), "Bed should be a list"
+        total=sum(self.bed)
         bed =[round(((i/total) *100),2) for i in self.bed]
     
         return bed
@@ -57,7 +57,7 @@ class GrainPreprocess():
         Method to return the cummulative score of an array (0-100)
         """
         self.bed = bed
-        assert isinstance(self.bed == list), "Bed should be a list"
+        assert isinstance(self.bed, list), "Bed should be a list"
         from itertools import accumulate
    
     
@@ -81,7 +81,7 @@ class GrainPreprocess():
 
         sedi_passing=[5,16,25,50,75,84,95,100]
         self.bed_data = bed_data
-        assert isinstance(self.bed == list), "bed should be a list"
+        assert isinstance(self.bed, list), "bed should be a list"
         bed=self.bed_data
        
         sed_passing=[str(i)+ '%' for i in sedi_passing]
