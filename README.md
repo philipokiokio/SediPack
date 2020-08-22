@@ -1,17 +1,11 @@
 # Sedipack 
 
-This is a simple package that is created to provide support to earth scientist and earth engineers (students in particuar).
+This is a simple package that is created to provide support to earth scientist and earth engineers (students in particular). This package seeks to help create an open-source solution to grain-size statistical analysis, and the production of grain plots.
 
-This package seeks to help create an open-source solution to grain-size statistical analysis, and the production of grain plots.
-
-Sedi pack is born out of the problems faced during the earlier days of the my Senior year project. 
-
-The Problem I faced was: Software and Activation Keys which is or was expensive to get.
-
-After Which I then thought to my self why was there no existing way to do it in python. Then I went to work.
+Sedi pack is born out of the problems faced during the earlier days of the my Senior year project. The Problem I faced was: Software and Activation Keys which is or was expensive to get. After Which I then thought to my self why was there no existing way to do it in python. Then I went to work.
 
 
-## Available Functions.
+# Available Functions/Processes.
 
 The Package comprises of 4 Houses  of serveral functions.
 
@@ -20,7 +14,7 @@ The Package comprises of 4 Houses  of serveral functions.
 3. *GrainStasDes.*
 4. *GrainDataTables.*
 
-## Functions and Methods Available.
+## Methods Available.
 
 There are about 14 functions/method that vcan be called and returns various data points.
 
