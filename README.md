@@ -115,7 +115,7 @@ List of contributors to this project. To get your name Here contribute.
 
 I will like to also acknowledge the input of mentors and friends in this project.
 
-1. Olawale Ibrahim  @olawaleibrahim(Machine Learning Engineer & The Author of Petroeval) &  Emmanuel Jolaiya @jeafreezy( Machine Learning Engineer & The Author of rsgis and the Famous GISBOT on Twitter)
+1. Olawale Ibrahim(Machine Learning Engineer & The Author of Petroeval) &  Emmanuel Jolaiya( Machine Learning Engineer & The Author of rsgis and the Famous GISBOT on Twitter)
 
 2. You  for using and reading this, Thank you.
 
