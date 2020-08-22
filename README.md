@@ -5,7 +5,6 @@ This is a simple package that is created to provide support to earth scientist a
 Sedi pack is born out of the problems faced during the earlier days of the my Senior year project. The Problem I faced was: Software and Activation Keys which is or was expensive to get. After Which I then thought to my self why was there no existing way to do it in python. Then I went to work.
 
 
-https://pypi.org/project/sedipack/0.0.1/
 
 # Available Functions/Processes.
 
