@@ -100,8 +100,8 @@ class GrainViz():
         if self.fig == True or self.save_data == False:
             """Plots the Cuumulative Mass Retained vs the Phi Scale for easy picking of the percentiles"""
             fig,ax=plt.subplots(figsize=(10,8))
-            plt.plot(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'],color='blue')
-            plt.scatter(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'], color = 'blue')
+            plt.plot(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'],color='b')
+            plt.scatter(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'], color = 'r')
             ax.xaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.yaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.xaxis.set_minor_formatter(FormatStrFormatter("%.1f"))
@@ -126,8 +126,8 @@ class GrainViz():
         elif self.fig == False or self.save_data == True:
             """Plots the Cuumulative Mass Retained vs the Phi Scale for easy picking of the percentiles"""
             fig,ax=plt.subplots(figsize=(10,8))
-            plt.plot(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'],color = 'blue')
-            plt.scatter(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'],color = 'blue')
+            plt.plot(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'],color = 'b')
+            plt.scatter(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'],color = 'r')
             ax.xaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.yaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.xaxis.set_minor_formatter(FormatStrFormatter("%.1f"))
@@ -151,8 +151,8 @@ class GrainViz():
         elif self.fig == True or self.save_data == True:
             """Plots the Cuumulative Mass Retained vs the Phi Scale for easy picking of the percentiles"""
             fig,ax=plt.subplots(figsize=(10,8))
-            plt.plot(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'],color = 'blue')
-            plt.scatter(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'],color = 'blue')
+            plt.plot(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'],color = 'b')
+            plt.scatter(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'],color = 'r')
             ax.xaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.yaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.xaxis.set_minor_formatter(FormatStrFormatter("%.1f"))
@@ -178,8 +178,8 @@ class GrainViz():
               
             """Plots the Cuumulative Mass Retained vs the Phi Scale for easy picking of the percentiles"""
             fig,ax=plt.subplots(figsize=(10,8))
-            plt.plot(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'],color = 'blue')
-            plt.scatter(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'],color = 'blue')
+            plt.plot(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'],color = 'b')
+            plt.scatter(self.data['Phi_scale'],self.data['Cummulative_Mass_Retained'],color = 'r')
             ax.xaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.yaxis.set_minor_locator(AutoMinorLocator(n=5))
             ax.xaxis.set_minor_formatter(FormatStrFormatter("%.1f"))

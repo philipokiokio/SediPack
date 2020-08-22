@@ -76,9 +76,57 @@ Then importing the functionalities needed,
 `from sedipack.grainstatsdata import GrainDataTables`
  
 
- Once this has been done then you can initialize the import,
- `viz = GrainViz()` Then all other functionality can be gotten with a dot call.
- `viz.DataPlot()`.
+
+
+# Sample Code Presentation.
+So Here are code snippets on how call each method,
+
+* To install the package
+
+To install the package type in the command
+```
+pip install sedipack
+```
+This will always install the latest version that has been released.
+
+
+* Then importing the functionalities needed,
+
+```from sedipack.grainpreprocess import GrainPreprocess
+
+from sedipack.grainviz import GrainViz
+
+from sedipack.grainstats import GrainStatsDes
+
+`from sedipack.grainstatsdata import GrainDataTables
+
+'''
+
+
+*The intialiazation of the imports.
+
+ 
+```
+preprocess= GrainPreprocess()
+
+viz = GrainViz()
+
+stats = GrainStats()
+
+stats = GrainDataTables()
+
+'''
+
+
+* Calling of the methods.
+
+```
+Preprocess.MM_ToPhiScale)
+```
+
+
+Then all other functionality can be gotten with a dot call
+ 
 
  Using `viz.infohelp()` provides info about the type of functionality present and each method contains docstrings showing both inputs and outputs.
 
