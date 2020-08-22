@@ -20,7 +20,7 @@ The Package comprises of 4 Houses  of serveral functions.
 3. *GrainStasDes.*
 4. *GrainDataTables.*
 
-### Functions and Methods Available.
+## Functions and Methods Available.
 
 There are about 14 functions/method that vcan be called and returns various data points.
 
@@ -66,8 +66,27 @@ There are about 14 functions/method that vcan be called and returns various data
 Which call contains a docstring which contains information on how to use it.
 
 
-which of these functions can be import fromGrainPreprocess.
+# How to use this package.
 
+
+To use the function present in this package, the package has to be installed and that can be done with `pip install sedipack`.
+
+Then importing the functionalities needed,
+
+`from sedipack.grainpreprocess import GrainPreprocess`
+
+`from sedipack.grainviz import GrainViz`
+
+`from sedipack.grainstats import GrainStatsDes`
+
+`from sedipack.grainstatsdata import GrainDataTables`
+ 
+
+ Once this has been done then you can initialize the import,
+ `viz = GrainViz()` Then all other functionality can be gotten with a dot call.
+ `viz.DataPlot()`.
+
+ Using `viz.infohelp()` provides info about the type of functionality present and each method contains docstrings showing both inputs and outputs.
 
 ### Acknowledgements
 
