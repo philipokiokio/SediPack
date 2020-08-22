@@ -92,7 +92,8 @@ This will always install the latest version that has been released.
 
 * Then importing the functionalities needed,
 
-```from sedipack.grainpreprocess import GrainPreprocess
+```
+from sedipack.grainpreprocess import GrainPreprocess
 
 from sedipack.grainviz import GrainViz
 
@@ -103,7 +104,7 @@ from sedipack.grainstats import GrainStatsDes
 '''
 
 
-*The intialiazation of the imports.
+* The intialiazation of the imports.
 
  
 ```
