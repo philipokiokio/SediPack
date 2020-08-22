@@ -28,7 +28,7 @@ class GrainPreprocess():
 
         self.d = sieveSize
 
-        assert (self.d, list), "seiveSize should be a list"
+        assert isinstance(self.d, list), f"seiveSize should be a list, but {type(self.d)} was passed."
         phi=[round(-(math.log2(i)/math.log2(2)),2) for i in self.d]
 
         return phi
@@ -44,7 +44,7 @@ class GrainPreprocess():
         
         """
         self.bed = bed
-        assert isinstance(self.bed,list), "Bed should be a list"
+        assert isinstance(self.bed,list), f"Bed should be a list, but {type(self.phi_bed)} was passed."
         total=sum(self.bed)
         bed =[round(((i/total) *100),2) for i in self.bed]
     
@@ -57,7 +57,7 @@ class GrainPreprocess():
         Method to return the cummulative score of an array (0-100)
         """
         self.bed = bed
-        assert isinstance(self.bed, list), "Bed should be a list"
+        assert isinstance(self.bed, list), f"Bed should be a list, but {type(self.phi_bed)} was passed."
         from itertools import accumulate
    
     
@@ -81,7 +81,7 @@ class GrainPreprocess():
 
         sedi_passing=[5,16,25,50,75,84,95,100]
         self.bed_data = bed_data
-        assert isinstance(self.bed, list), "bed should be a list"
+        assert isinstance(self.bed, list), f"bed should be a list, but {type(self.bed_data)} was passed."
         bed=self.bed_data
        
         sed_passing=[str(i)+ '%' for i in sedi_passing]

@@ -43,7 +43,7 @@ class GrainViz():
         self.q=q
         self.phi = phi
 
-        assert isinstance(self.phi,list), "phi must be a list"
+        assert isinstance(self.phi,list), f"phi must be a list, but {type(self.phi)} was passed."
         self.bed_data = bed_data
 
         Outcrop_Bed_data= dict(zip(self.phi,self.bed_data))
@@ -69,10 +69,10 @@ class GrainViz():
         
         
         """
-        assert isinstance(self.phi_percentile,list), "phi_percentile must be a list"
+       
         self.data =data
         self.phi_percentile = phi_percentile
-
+        assert isinstance(self.phi_percentile,list), f"phi_percentile must be a list, but {type(self.phi_percentile)} was passed."
         self.data['Percentile_Grain_size_(Phi)']=self.phi_percentile
         return self.data
     
@@ -95,7 +95,7 @@ class GrainViz():
         self.fig = fig
         self.save_data = save_data
         
-        assert isinstance(self.name_of_bed,str), "Name of Bed must be a String"
+        assert isinstance(self.name_of_bed,str), f"Name of Bed must be a String, but {type(self.name_of_bed)} was passed."
 
         if self.fig == True or self.save_data == False:
             """Plots the Cuumulative Mass Retained vs the Phi Scale for easy picking of the percentiles"""
