@@ -144,17 +144,12 @@ Then all other functionality can be gotten with a dot call
 **GNU GENERAL PUBLIC LICENSE**
 
 
-# State of the Project.
-
-I hereby declare this project Open Source in the Universe Name (Jesus and God in my Case.)!
-yes anyone can contribute.
-
 # Role Call of Contributors.
 List of contributors to this project. To get your name Here contribute.
 
 
 1. Olawale Ibrahim and Emmanuel Jolaiya.
-2. 
+2. Timi Bankole Ojo (Who Project Managed and advised me to develop a package for my undergraduate project)
 
 
 
